@@ -12,50 +12,42 @@ Things to finish up:
 - [ ] Cost comparison with existing services.
 - [ ] Create fine-grained IAM roles for each service(current one is too broad).
 
-# Table of Contents
+## Table of Contents
 
-1. [Diagram of the Workflow](#diagram-of-the-architecture)
+1. [Diagram of the Workflow](#diagram-of-the-workflow)
 2. [Architecture Overview](#architecture-overview)
 3. [Features](#features)
 4. [Explaining the folders](#explaining-the-folders)
 5. [Acknowledgements](#acknowledgements)
 
-# Diagram of the Workflow 
+## Diagram of the Workflow 
 
 ![Diagram of the Workflow](./diagrams/serverless.png)
 *The complete diagram of the architecture can be found in the `diagrams` folder.*
 
-# Architecture Overview
+## Architecture Overview
 The service architecture comprises the following components:
 
-- **Amazon S3**: Used for storing input and output video files.
-
-- **AWS Lambda**: Responsible for triggering transcoding tasks and managing the orchestration of the transcoding workflow.
-
-- **Amazon ECS**: Utilized for executing transcoding jobs in containers, providing scalability and flexibility.
-
-- **Amazon API Gateway**: Exposes a RESTful API endpoint for interacting with the transcoding service.
-
-- **Amazon DynamoDB**: Stores metadata related to transcoding jobs for tracking and management purposes.
-
-- **AWS EventBridge**: Used for triggering transcoding tasks based on predefined events, such as file uploads.
+| Service | Description |
+| --- | --- |
+| **Amazon S3** | Used for storing input and output video files. |
+| **AWS Lambda**|Responsible for triggering transcoding tasks and managing the orchestration of the transcoding workflow. |
+| **Amazon ECS**|Utilized for executing transcoding jobs in containers, providing scalability and flexibility. |
+| **Amazon API Gateway**|Exposes a RESTful API endpoint for interacting with the transcoding service. |
+| **Amazon DynamoDB**|Stores metadata related to transcoding jobs for tracking and management purposes. |
+| **AWS EventBridge**|Used for triggering transcoding tasks based on predefined events, such as file uploads. |
 
 *A simple HTML frontend then interacts with the API Gateway to submit video transcoding jobs and retrieve the output files.*
 
-# Features
+## Features
 - **Scalability**: Leveraging AWS Lambda, ECS, and S3, the service automatically scales based on demand, ensuring efficient transcoding of video files regardless of the volume.
-
 - **Cost-effectiveness**: By utilizing serverless architecture, the service minimizes operational costs by only paying for the resources consumed during transcoding tasks.
-
 - **Customization**: Users can define their transcoding profiles and presets tailored to their specific requirements, allowing flexibility in the transcoding process.
-
 - **Event-driven**: Integrates with AWS EventBridge for triggering transcoding tasks based on predefined events, such as file uploads to an S3 bucket.
-
 - **Monitoring and Logging**: Utilizes AWS CloudWatch for monitoring and logging, providing insights into the transcoding process and performance metrics.
-
 - **RESTful API**: Exposes a RESTful API via AWS API Gateway for seamless integration with other applications and services.
 
-# Explaining the folders
+## Explaining the folders
 
 - **`create-video-table`**: Contains code to create the DynamoDB table to store metadata related to video transcoding jobs using AWS Go SDK.
 
@@ -74,6 +66,6 @@ The service architecture comprises the following components:
 - **`upload-lambda`**: Contains code for the Lambda function that returns a pre-signed URL for uploading video files to an S3 bucket.
 
 
-# Acknowledgements
+## Acknowledgements
 
 - [ffmpeg](https://ffmpeg.org/): used for transcoding video files.
