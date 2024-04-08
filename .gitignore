@@ -1,0 +1,5 @@
+/*/**/.env
+/*/**/*.zip
+/*/**/bootstrap
+/transcoding-image-for-ecs/out/*
+/transcoding-image-for-ecs/*.mp4
