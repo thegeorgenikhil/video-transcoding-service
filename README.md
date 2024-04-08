@@ -1,7 +1,5 @@
 # Video Transcoding Service using AWS
 
-## Introduction
-
 The project aims to build a serverless video transcoding service using AWS. Video transcoding refers to the process of converting video files from one format to another, enabling compatibility with different devices and platforms. The service will be designed to accept video files as input, transcode them into multiple formats, and store the output files in Amazon S3. 
 
 The architecture is designed to be scalable, cost-effective, and highly available, leveraging serverless technologies to minimize operational overhead and infrastructure management.
