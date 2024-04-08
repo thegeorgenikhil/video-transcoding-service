@@ -16,7 +16,8 @@ Things to finish up:
 2. [Architecture Overview](#architecture-overview)
 3. [Features](#features)
 4. [Explaining the folders](#explaining-the-folders)
-5. [Acknowledgements](#acknowledgements)
+5. [Screenshots](#screenshots)
+6. [Acknowledgements](#acknowledgements)
 
 ## Diagram of the Workflow 
 
@@ -63,6 +64,10 @@ The service architecture comprises the following components:
 
 - **`upload-lambda`**: Contains code for the Lambda function that returns a pre-signed URL for uploading video files to an S3 bucket.
 
+## Screenshots
+
+![Home Page](./diagrams/home-page.jpeg)
+![Video Playback](./diagrams/video-playback-page.jpeg)
 
 ## Acknowledgements
 
