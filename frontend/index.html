@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Transcoding Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-header">
+        <a href="/">
+          <h1 class="nav-heading">
+            video<span class="nav-highlight">transcodr</span>
+          </h1>
+        </a>
+      </div>
+      <p class="sub-heading-nav">
+        Transcode your videos using cloud in minutes at a fraction of the cost.
+      </p>
+      <div class="nav-lining"></div>
+    </nav>
+    <div>
+      <p class="file-upload-label">upload your video</p>
+      <div class="file-upload-container">
+        <div class="input-container">
+          <input type="file" id="videoInput" />
+        </div>
+        <button id="uploadBtn" class="btn">Upload Video</button>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div id="outputDiv"></div>
+      <div id="videoListDiv"></div>
+    </div>
+    <div id="snackbar"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

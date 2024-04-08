@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: #fafafa;
+  --primary: #2cb67d;
+  --almost-gray: #666666;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  padding: 2rem;
+  background-color: var(--background);
+  max-width: 800px;
+  margin: auto;
+}
+
+.nav {
+  margin: auto;
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-lining {
+  width: 100%;
+  height: 1px;
+  background-color: #66666644;
+  margin: 1rem 0;
+}
+
+.sub-heading-nav {
+  color: var(--almost-gray);
+  padding: 0.5rem 0 1rem 0;
+}
+
+.nav-heading {
+  font-size: 1.5rem;
+}
+
+.nav-header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-highlight {
+  color: var(--primary);
+}
+
+.btn {
+  background-color: var(--primary);
+  padding: 5px 15px;
+  color: #ffffff;
+  font-size: 15px;
+  border: 2px solid rgba(0, 100, 0, 0.346);
+  outline: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:active {
+  opacity: 0.8;
+  border: 2px solid rgba(0, 100, 0, 0.5);
+}
+
+.btn-red {
+  background-color: #ce0505;
+  border: 2px solid rgba(100, 0, 0, 0.346);
+}
+
+.file-upload-label {
+  color: var(--almost-gray);
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.file-upload-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-container {
+  border: 1px solid #e5e5e5;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #fff;
+  color: #000;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+  padding: 10px 15px;
+  margin-right: 20px;
+  transition: 0.5s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #eee;
+  border: 0px;
+  border-right: 1px solid #e5e5e5;
+}
+
+.table-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  max-width: 40rem;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  overflow: scroll;
+}
+
+table th {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+table td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.col-disabled {
+  opacity: 0.2;
+  pointer-events: none;
+  user-select: none;
+}
+
+video {
+  width: 500px;
+  margin: auto;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: var(--primary); /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 4px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 9999; /* Add a higher z-index to ensure it overlays other elements */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+  }
+  .file-upload-container {
+    flex-direction: column;
+  }
+  .input-container {
+    width: 100%;
+  }
+  input[type="file"]::file-selector-button {
+    margin-right: 0;
+  }
+
+  .mobile-hidden {
+    display: none;
+  }
+}

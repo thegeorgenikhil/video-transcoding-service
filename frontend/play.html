@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Transcoding Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-header">
+        <a href="/">
+          <h1 class="nav-heading">
+            video<span class="nav-highlight">transcodr</span>
+          </h1>
+        </a>
+      </div>
+      <p class="sub-heading-nav">
+        Transcode your videos using cloud in minutes at a fraction of the cost.
+      </p>
+      <div class="nav-lining"></div>
+    </nav>
+    <div>
+      <center>
+        <video controls preload>
+          <source id="video-player" label="1080p" src="" type="video/mp4" />
+        </video>
+      </center>
+      <center>
+        <label>Video Resolution: </label>
+        <select id="quality-picker" class="qualitypick" autocomplete="off">
+          <option selected value="1080p">1080p</option>
+          <option value="720p">720p</option>
+          <option value="480p">480p</option>
+          <option value="360p">360p</option>
+          <option value="240p">240p</option>
+          <option value="144p">144p</option>
+        </select>
+      </center>
+    </div>
+    <div id="snackbar"></div>
+    <script src="./play.js"></script>
+  </body>
+</html>
